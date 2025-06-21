@@ -21,8 +21,13 @@ The project demonstrates how a mapping problem could be solved in a Java Develop
 git clone <repository-url>
 cd <project-directory>
 
-# Only Build the project
+# Build the project and execute the build
 ./gradlew build
+
+java -jar build/libs/MapperDemo-0.0.1-SNAPSHOT.jar
+
+# If the mentioned build can not be found, run the following command to identify the build
+ls build/libs/
 
 # Directly run the application from source code
 ./gradlew bootRun
@@ -32,3 +37,18 @@ cd <project-directory>
 The application exposes RESTful API for mapping operations.
 
 - **Mapping Endpoint**: `localhost:8080/api/map`
+### Example Request Body
+```json
+{
+"versicherungsNr": "12345678901",
+"nachname": "Müller",
+"vorname": "Anna",
+"geburtsdatum": "1990-01-05",
+"versicherungstyp": "KVG",
+"rechnungsdatum": "2025-02-13",
+"drgCode": "F06B",
+"rechnungstyp": "DRG",
+"mcdLink": "https://sumex.ch/...",
+"ticketId": "TCK-2025-98765"
+}
+```
